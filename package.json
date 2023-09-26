@@ -1,0 +1,22 @@
+{
+  "name": "teste-api-cypress",
+  "version": "1.0.0",
+  "description": "Módulo 14 do curso EBAC - Testes automatizados de API Rest",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustavoullmann/teste-api-cypress.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gustavoullmann/teste-api-cypress/issues"
+  },
+  "homepage": "https://github.com/gustavoullmann/teste-api-cypress#readme",
+  "devDependencies": {
+    "cypress": "^13.2.0"
+  }
+}
