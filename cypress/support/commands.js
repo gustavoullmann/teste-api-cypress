@@ -1,29 +1,31 @@
+Cypress.Commands.add("gerarToken", (email, senha) => {
+  cy.request({
+    method: "POST",
+    url: "/login",
+    body: {
+      email: email,
+      password: senha,
+    },
+  }).then((response) => {
+    expect(response.status).to.equal(200);
+    return response.body.authorization;
+  });
+});
 
-Cypress.Commands.add('gerarToken', (email, senha) => {
+Cypress.Commands.add(
+  "cadastrarProduto",
+  (token, nome, preco, descricao, quantidade) => {
     cy.request({
-        method: 'POST',
-        url: '/login',
-        body: {
-            "email": email,
-            "password": senha
-          }
-    }).then((response) => {
-        expect(response.status).to.equal(200)
-        return response.body.authorization
-    })
-})
-
-Cypress.Commands.add('cadastrarProduto', (token, nome, preco, descricao, quantidade) => {
-    cy.request({
-        method: 'POST',
-        url: '/produtos',
-        headers: { authorization: token },
-        body: {
-            "nome": nome,
-            "preco": preco,
-            "descricao": descricao,
-            "quantidade": quantidade
-        },
-        failOnStatusCode: false
-    })
-})
+      method: "POST",
+      url: "/produtos",
+      headers: { authorization: token },
+      body: {
+        nome: nome,
+        preco: preco,
+        descricao: descricao,
+        quantidade: quantidade,
+      },
+      failOnStatusCode: false,
+    });
+  },
+);

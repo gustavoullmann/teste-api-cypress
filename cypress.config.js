@@ -1,6 +1,5 @@
 const { defineConfig } = require("cypress");
 
-
 module.exports = defineConfig({
   watchForFileChanges: false,
   reporter: "mochawesome",
@@ -8,10 +7,9 @@ module.exports = defineConfig({
     reportDir: "mochawesome-report",
     overwrite: false,
     html: false,
-    json: true
+    json: true,
   },
   e2e: {
-    baseUrl: 'http://localhost:3000'
+    baseUrl: "http://localhost:3000",
   },
-
 });
