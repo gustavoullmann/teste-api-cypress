@@ -1,11 +1,26 @@
 /// <reference types = "cypress"/>
 import contractSchema from "../contracts/products.contracts";
+const { faker } = require('@faker-js/faker');
 
 describe("Teste da funcionalidade Produtos", () => {
   var token;
+  var usuario = faker.internet.email()
+
+  it("Cadastra usuário com sucesso", () => {
+    cy.request({
+      method: "POST",
+      url: "/usuarios",
+      body: {
+        nome: "Fulano da Silva",
+        email: usuario,
+        password: "teste",
+        administrador: "true"
+      },
+    })
+  })
 
   beforeEach(() => {
-    cy.gerarToken("Ralph_McKenzie221@yahoo.com", "teste").then(
+    cy.gerarToken(usuario, "teste").then(
       (returnedToken) => {
         token = returnedToken;
       },
