@@ -5,7 +5,7 @@ describe("Teste da funcionalidade Produtos", () => {
   var token;
 
   beforeEach(() => {
-    cy.gerarToken("Ralph_McKenzie21@yahoo.com", "teste").then(
+    cy.gerarToken("Ralph_McKenzie221@yahoo.com", "teste").then(
       (returnedToken) => {
         token = returnedToken;
       },
