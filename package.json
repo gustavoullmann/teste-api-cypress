@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/gustavoullmann/teste-api-cypress#readme",
   "devDependencies": {
-    "cypress": "^13.2.0",
+    "cypress": "^13.6.2",
     "cypress-multi-reporters": "^1.6.3",
     "joi": "^17.10.2",
     "mocha": "^10.2.0",
