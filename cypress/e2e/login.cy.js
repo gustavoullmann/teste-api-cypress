@@ -1,4 +1,7 @@
 /// <reference types = "cypress"/>
+const { faker } = require('@faker-js/faker');
+
+var usuario = faker.internet.email()
 
 describe("Login - Testes da API ServeRest", () => {
   it("Cadastra usuário com sucesso", () => {
@@ -7,7 +10,7 @@ describe("Login - Testes da API ServeRest", () => {
       url: "/usuarios",
       body: {
         nome: "Fulano da Silva",
-        email: "Ralph_McKenzie221@yahoo.com",
+        email: usuario,
         password: "teste",
         administrador: "true"
       },
@@ -22,7 +25,7 @@ describe("Login - Testes da API ServeRest", () => {
       method: "POST",
       url: "/login",
       body: {
-        email: "Ralph_McKenzie221@yahoo.com",
+        email: usuario,
         password: "teste",
       },
     }).then((response) => {
